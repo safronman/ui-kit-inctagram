@@ -45,3 +45,5 @@ PRs should include:
 1. If a prompt mentions Shadcn, use `mcp_servers.shadcn`.
 2. If a prompt mentions Figma, use `mcp_servers.Framelink_Figma_MCP`.
 3. Create commits according to Conventional Commits.
+4. After completing any task, always run `pnpm run build`.
+5. If `pnpm run build` fails, fix the errors and rerun the build until it completes successfully.
