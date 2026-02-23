@@ -33,11 +33,15 @@ When adding tests, prefer Vitest + React Testing Library:
 - Add a `test` script to `package.json` and document usage in `README.md`.
 
 ## Commit & Pull Request Guidelines
-Git history is not available in this workspace snapshot, so no existing commit pattern can be inferred.
-Use concise, imperative commit messages (for example, `feat: add button variants` or `fix: handle empty avatar`).
+Use Conventional Commits for all commit messages (for example, `feat: add button variants` or `fix: handle empty avatar`).
 
 PRs should include:
 - Clear summary of changes and rationale.
 - Linked issue/task (if applicable).
 - Screenshots or short recordings for UI changes.
 - Confirmation that `pnpm lint` and `pnpm build` pass locally.
+
+## Agent Tool Routing Rules
+1. If a prompt mentions Shadcn, use `mcp_servers.shadcn`.
+2. If a prompt mentions Figma, use `mcp_servers.Framelink_Figma_MCP`.
+3. Create commits according to Conventional Commits.
