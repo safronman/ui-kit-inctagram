@@ -88,7 +88,7 @@
 
 :root {
   /* Typography tokens */
-  --font-family-sans: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-sans: 'Inter Variable', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
