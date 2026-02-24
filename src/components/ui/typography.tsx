@@ -1,58 +1,75 @@
-import type { HTMLAttributes } from 'react'
+import type { ComponentPropsWithoutRef, ElementType } from 'react'
+import { clsx } from 'clsx'
 
-import { cn } from '@/lib/utils'
+type TypographyVariant =
+  | 'large'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'regularText16'
+  | 'boldText16'
+  | 'regularText14'
+  | 'mediumText14'
+  | 'boldText14'
+  | 'smallText'
+  | 'smallTextSemibold'
+  | 'regularLink'
+  | 'smallLink'
 
-type TypographyProps = HTMLAttributes<HTMLElement>
+type LinkVariant = 'regularLink' | 'smallLink'
+type NonLinkVariant = Exclude<TypographyVariant, LinkVariant>
 
-export function H1({ className, ...props }: TypographyProps) {
-  return <h1 className={cn('scroll-m-20 text-h1 font-bold tracking-tight text-balance', className)} {...props} />
+const variantStyles: Record<TypographyVariant, string> = {
+  large: 'text-large font-semibold text-foreground',
+  h1: 'text-h1 font-bold text-foreground',
+  h2: 'text-h2 font-bold text-foreground',
+  h3: 'text-h3 font-semibold text-foreground',
+  regularText16: 'text-regular-16 text-foreground',
+  boldText16: 'text-bold-16 text-foreground',
+  regularText14: 'text-regular-14 text-foreground',
+  mediumText14: 'text-medium-14 text-foreground',
+  boldText14: 'text-bold-14 text-foreground',
+  smallText: 'text-small text-foreground',
+  smallTextSemibold: 'text-small-semibold text-foreground',
+  regularLink: 'text-link-regular text-primary underline-offset-4 hover:underline',
+  smallLink: 'text-link-small text-primary underline-offset-4 hover:underline',
 }
 
-export function H2({ className, ...props }: TypographyProps) {
-  return (
-    <h2 className={cn('scroll-m-20 border-b pb-2 text-h2 font-bold tracking-tight first:mt-0', className)} {...props} />
-  )
+const defaultElements: Record<TypographyVariant, ElementType> = {
+  large: 'p',
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  regularText16: 'p',
+  boldText16: 'p',
+  regularText14: 'p',
+  mediumText14: 'p',
+  boldText14: 'p',
+  smallText: 'small',
+  smallTextSemibold: 'small',
+  regularLink: 'a',
+  smallLink: 'a',
 }
 
-export function H3({ className, ...props }: TypographyProps) {
-  return <h3 className={cn('scroll-m-20 text-h3 font-semibold tracking-tight', className)} {...props} />
+type TypographyProps<T extends ElementType> = {
+  as?: T
+  variant: NonLinkVariant
+  className?: string
+} & Omit<ComponentPropsWithoutRef<T>, 'as' | 'className'>
+
+type TypographyLinkProps = {
+  as?: 'a'
+  variant: LinkVariant
+  className?: string
+} & Omit<ComponentPropsWithoutRef<'a'>, 'as' | 'className'>
+
+export function Typography(props: TypographyLinkProps): React.JSX.Element
+export function Typography<T extends ElementType = 'p'>(props: TypographyProps<T>): React.JSX.Element
+export function Typography<T extends ElementType = 'p'>(props: TypographyLinkProps | TypographyProps<T>) {
+  const { as, variant, className, ...restProps } = props
+  const Component = (as ?? defaultElements[variant]) as ElementType
+
+  return <Component className={clsx(variantStyles[variant], className)} {...restProps} />
 }
 
-export function P({ className, ...props }: TypographyProps) {
-  return <p className={cn('text-regular-16 [&:not(:first-child)]:mt-6', className)} {...props} />
-}
-
-export function Lead({ className, ...props }: TypographyProps) {
-  return <p className={cn('text-regular-16 text-muted-foreground', className)} {...props} />
-}
-
-export function Large({ className, ...props }: TypographyProps) {
-  return <div className={cn('text-large font-semibold', className)} {...props} />
-}
-
-export function Small({ className, ...props }: TypographyProps) {
-  return <small className={cn('text-small font-medium leading-none', className)} {...props} />
-}
-
-export function Muted({ className, ...props }: TypographyProps) {
-  return <p className={cn('text-small text-muted-foreground', className)} {...props} />
-}
-
-export function InlineCode({ className, ...props }: TypographyProps) {
-  return (
-    <code
-      className={cn('bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold', className)}
-      {...props}
-    />
-  )
-}
-
-export function Blockquote({ className, ...props }: TypographyProps) {
-  return <blockquote className={cn('mt-6 border-l-2 pl-6 italic', className)} {...props} />
-}
-
-type ListProps = HTMLAttributes<HTMLUListElement>
-
-export function List({ className, ...props }: ListProps) {
-  return <ul className={cn('my-6 ml-6 list-disc [&>li]:mt-2', className)} {...props} />
-}
+export type { TypographyVariant }
