@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import preview from '#.storybook/preview'
 
 import { Button } from './button'
 
-const meta = {
+const meta = preview.meta({
   title: 'UI/Button',
   component: Button,
   tags: ['autodocs'],
@@ -22,41 +22,40 @@ const meta = {
       options: ['default', 'xs', 'sm', 'lg', 'icon', 'icon-xs', 'icon-sm', 'icon-lg'],
     },
   },
-} satisfies Meta<typeof Button>
+})
 
-export default meta
-type Story = StoryObj<typeof meta>
+export const Primary = meta.story({
+  args: {},
+})
 
-export const Primary: Story = {}
-
-export const Secondary: Story = {
+export const Secondary = meta.story({
   args: {
     variant: 'secondary',
   },
-}
+})
 
-export const Outline: Story = {
+export const Outline = meta.story({
   args: {
     variant: 'outline',
   },
-}
+})
 
-export const Text: Story = {
+export const Text = meta.story({
   args: {
     variant: 'text',
   },
-}
+})
 
-export const Icon: Story = {
+export const Icon = meta.story({
   args: {
     size: 'icon',
     'aria-label': 'Favorite',
     children: '❤',
   },
-}
+})
 
-export const Disabled: Story = {
+export const Disabled = meta.story({
   args: {
     disabled: true,
   },
-}
+})

@@ -1,6 +1,5 @@
-import type { StorybookConfig } from '@storybook/react-vite'
-
-const config: StorybookConfig = {
+import { defineMain } from '@storybook/react-vite/node'
+export default defineMain({
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@chromatic-com/storybook',
@@ -22,5 +21,4 @@ const config: StorybookConfig = {
     experimentalComponentsManifest: true,
   },
   framework: '@storybook/react-vite',
-}
-export default config
+})

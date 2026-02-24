@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import preview from '#.storybook/preview'
 
 import { Typography } from './typography'
 
-const meta = {
+const meta = preview.meta({
   title: 'UI/Typography',
   component: Typography,
   tags: ['autodocs'],
@@ -30,39 +30,41 @@ const meta = {
       ],
     },
   },
-} satisfies Meta<typeof Typography>
+})
 
-export default meta
-type Story = StoryObj<typeof meta>
+export const RegularText = meta.story({
+  args: {
+    variant: 'regularText16',
+    children: 'Typography sample',
+  },
+})
 
-export const RegularText: Story = {}
-
-export const HeadingH1: Story = {
+export const HeadingH1 = meta.story({
   args: {
     variant: 'h1',
     children: 'Heading H1',
   },
-}
+})
 
-export const Large: Story = {
+export const Large = meta.story({
   args: {
     variant: 'large',
     children: 'Large text',
   },
-}
+})
 
-export const RegularLink: Story = {
+export const RegularLink = meta.story({
   render: () => (
     <Typography variant="regularLink" href="#">
       Regular link
     </Typography>
   ),
-}
+})
 
-export const SmallLink: Story = {
+export const SmallLink = meta.story({
   render: () => (
     <Typography variant="smallLink" href="#">
       Small link
     </Typography>
   ),
-}
+})
