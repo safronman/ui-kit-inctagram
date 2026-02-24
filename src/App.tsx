@@ -6,7 +6,7 @@ function App() {
     <main className="flex min-h-screen items-center justify-center bg-background p-6">
       <div className="flex flex-col items-center gap-4">
         <H1>Shadcn UI setup</H1>
-        <Button variant={'default'}>Shadcn Button</Button>
+        <Button>Shadcn Button</Button>
       </div>
     </main>
   )
