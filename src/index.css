@@ -12,6 +12,47 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --font-sans: var(--font-family-sans);
+  --font-heading: var(--font-family-sans);
+  --text-large: var(--font-size-large);
+  --text-large--line-height: var(--line-height-large);
+  --text-large--font-weight: var(--font-weight-semibold);
+  --text-h1: var(--font-size-h1);
+  --text-h1--line-height: var(--line-height-h1);
+  --text-h1--font-weight: var(--font-weight-bold);
+  --text-h2: var(--font-size-h2);
+  --text-h2--line-height: var(--line-height-h2);
+  --text-h2--font-weight: var(--font-weight-bold);
+  --text-h3: var(--font-size-h3);
+  --text-h3--line-height: var(--line-height-h3);
+  --text-h3--font-weight: var(--font-weight-semibold);
+  --text-regular-16: var(--font-size-regular-16);
+  --text-regular-16--line-height: var(--line-height-regular-16);
+  --text-regular-16--font-weight: var(--font-weight-regular);
+  --text-bold-16: var(--font-size-bold-16);
+  --text-bold-16--line-height: var(--line-height-bold-16);
+  --text-bold-16--font-weight: var(--font-weight-bold);
+  --text-regular-14: var(--font-size-regular-14);
+  --text-regular-14--line-height: var(--line-height-regular-14);
+  --text-regular-14--font-weight: var(--font-weight-regular);
+  --text-medium-14: var(--font-size-medium-14);
+  --text-medium-14--line-height: var(--line-height-medium-14);
+  --text-medium-14--font-weight: var(--font-weight-medium);
+  --text-bold-14: var(--font-size-bold-14);
+  --text-bold-14--line-height: var(--line-height-bold-14);
+  --text-bold-14--font-weight: var(--font-weight-bold);
+  --text-small: var(--font-size-small);
+  --text-small--line-height: var(--line-height-small);
+  --text-small--font-weight: var(--font-weight-regular);
+  --text-small-semibold: var(--font-size-small-semibold);
+  --text-small-semibold--line-height: var(--line-height-small-semibold);
+  --text-small-semibold--font-weight: var(--font-weight-semibold);
+  --text-link-regular: var(--font-size-link-regular);
+  --text-link-regular--line-height: var(--line-height-link-regular);
+  --text-link-regular--font-weight: var(--font-weight-regular);
+  --text-link-small: var(--font-size-link-small);
+  --text-link-small--line-height: var(--line-height-link-small);
+  --text-link-small--font-weight: var(--font-weight-regular);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -46,6 +87,40 @@
 }
 
 :root {
+  /* Typography tokens */
+  --font-family-sans: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-large: 1.625rem;
+  --line-height-large: 2.25rem;
+  --font-size-h1: 1.25rem;
+  --line-height-h1: 2.25rem;
+  --font-size-h2: 1.125rem;
+  --line-height-h2: 1.5rem;
+  --font-size-h3: 1rem;
+  --line-height-h3: 1.5rem;
+  --font-size-regular-16: 1rem;
+  --line-height-regular-16: 1.5rem;
+  --font-size-bold-16: 1rem;
+  --line-height-bold-16: 1.5rem;
+  --font-size-regular-14: 0.875rem;
+  --line-height-regular-14: 1.5rem;
+  --font-size-medium-14: 0.875rem;
+  --line-height-medium-14: 1.5rem;
+  --font-size-bold-14: 0.875rem;
+  --line-height-bold-14: 1.5rem;
+  --font-size-small: 0.75rem;
+  --line-height-small: 1rem;
+  --font-size-small-semibold: 0.75rem;
+  --line-height-small-semibold: 1rem;
+  --font-size-link-regular: 0.875rem;
+  --line-height-link-regular: 1.5rem;
+  --font-size-link-small: 0.75rem;
+  --line-height-link-small: 1rem;
+
   /* Base palette */
   --accent-100: oklch(0.726 0.142 261.448);
   --accent-300: oklch(0.658 0.182 260.738);
@@ -158,6 +233,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
   }
 }
