@@ -6,6 +6,14 @@ const meta = preview.meta({
   title: 'UI/Typography',
   component: Typography,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Typography provides text styles through the `variant` prop. Use heading variants for hierarchy, body variants for readable content, and link variants when rendering anchors with `href`.',
+      },
+    },
+  },
   args: {
     variant: 'regularText16',
     children: 'Typography sample',
@@ -37,6 +45,13 @@ export const RegularText = meta.story({
     variant: 'regularText16',
     children: 'Typography sample',
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Default body text style for most paragraphs and descriptive copy.',
+      },
+    },
+  },
 })
 
 export const HeadingH1 = meta.story({
@@ -44,12 +59,26 @@ export const HeadingH1 = meta.story({
     variant: 'h1',
     children: 'Heading H1',
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Top-level heading style used for major section or page titles.',
+      },
+    },
+  },
 })
 
 export const Large = meta.story({
   args: {
     variant: 'large',
     children: 'Large text',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Prominent large text variant for short highlights and emphasis blocks.',
+      },
+    },
   },
 })
 
@@ -59,6 +88,13 @@ export const RegularLink = meta.story({
       Regular link
     </Typography>
   ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Regular-sized link typography rendered as an anchor via `href`.',
+      },
+    },
+  },
 })
 
 export const SmallLink = meta.story({
@@ -67,4 +103,11 @@ export const SmallLink = meta.story({
       Small link
     </Typography>
   ),
+  parameters: {
+    docs: {
+      description: {
+        story: 'Compact link style for dense layouts such as footnotes or meta actions.',
+      },
+    },
+  },
 })
