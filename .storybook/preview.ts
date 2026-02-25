@@ -6,6 +6,13 @@ import '../src/index.css'
 
 export default definePreview({
   parameters: {
+    darkMode: {
+      current: 'light',
+      darkClass: 'dark',
+      lightClass: 'light',
+      classTarget: 'html',
+      stylePreview: true,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
