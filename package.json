@@ -1,17 +1,59 @@
 {
-  "name": "ui-kit-inctagram",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@your-scope/ui-kit-inctagram",
+  "private": false,
+  "version": "0.1.0",
+  "description": "Reusable React UI kit components with typed variants and prebuilt styles.",
+  "license": "MIT",
   "type": "module",
+  "author": "",
+  "homepage": "https://github.com/your-org/ui-kit-inctagram#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/ui-kit-inctagram.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/ui-kit-inctagram/issues"
+  },
+  "keywords": [
+    "react",
+    "ui-kit",
+    "components",
+    "typescript",
+    "design-system"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "pnpm run build:lib && pnpm run build:types",
+    "build:lib": "vite build",
+    "build:types": "tsc -p tsconfig.build.json",
     "lint": "eslint .",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "pnpm run build && pnpm run lint"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
@@ -19,9 +61,11 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.575.0",
     "radix-ui": "^1.4.3",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
     "tailwind-merge": "^3.5.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.0.1",
