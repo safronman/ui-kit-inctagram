@@ -1,17 +1,17 @@
-# @your-scope/ui-kit-inctagram
+# @safronman/ui-kit-inctagram
 
 Reusable React UI components with ready-to-use styles.
 
 ## Installation
 
 ```bash
-npm install @your-scope/ui-kit-inctagram
+npm install @safronman/ui-kit-inctagram
 ```
 
 or
 
 ```bash
-pnpm add @your-scope/ui-kit-inctagram
+pnpm add @safronman/ui-kit-inctagram
 ```
 
 ## Usage
@@ -19,13 +19,13 @@ pnpm add @your-scope/ui-kit-inctagram
 Import styles once in your app entry:
 
 ```ts
-import '@your-scope/ui-kit-inctagram/styles.css'
+import '@safronman/ui-kit-inctagram/styles.css'
 ```
 
 Import components:
 
 ```tsx
-import { Button, Typography } from '@your-scope/ui-kit-inctagram'
+import { Button, Typography } from '@safronman/ui-kit-inctagram'
 
 export function Example() {
   return (
@@ -52,20 +52,13 @@ export function Example() {
 
 ## Publishing
 
-1. Replace placeholder metadata in `package.json`:
-   - `name`
-   - `homepage`
-   - `repository`
-   - `bugs`
-2. Build and lint:
+1. Create an npm automation token and add it to repository secrets as `NPM_TOKEN`.
+2. Create a GitHub release with tag `vX.Y.Z` that matches `package.json` version.
+3. Workflow will install dependencies, run `pnpm build`, `pnpm lint`, and publish to npm automatically.
+4. Manual publish fallback:
 
 ```bash
 pnpm build
 pnpm lint
-```
-
-3. Publish:
-
-```bash
 npm publish --access public
 ```

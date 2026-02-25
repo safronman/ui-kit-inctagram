@@ -1,18 +1,18 @@
 {
-  "name": "@your-scope/ui-kit-inctagram",
+  "name": "@safronman/ui-kit-inctagram",
   "private": false,
   "version": "0.1.0",
   "description": "Reusable React UI kit components with typed variants and prebuilt styles.",
   "license": "MIT",
   "type": "module",
   "author": "",
-  "homepage": "https://github.com/your-org/ui-kit-inctagram#readme",
+  "homepage": "https://github.com/safronman/ui-kit-inctagram#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/ui-kit-inctagram.git"
+    "url": "https://github.com/safronman/ui-kit-inctagram.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/ui-kit-inctagram/issues"
+    "url": "https://github.com/safronman/ui-kit-inctagram/issues"
   },
   "keywords": [
     "react",
