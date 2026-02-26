@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          'bg-[var(--accent-500)] text-[var(--neutral-100)] hover:bg-[var(--accent-100)] active:bg-[var(--accent-700)] active:text-[var(--neutral-500)] focus-visible:border-2 focus-visible:border-[var(--accent-700)] disabled:bg-[var(--accent-900)] disabled:text-[var(--neutral-900)]',
+          'bg-[var(--success-500)] text-[var(--neutral-100)] hover:bg-[var(--accent-100)] active:bg-[var(--accent-700)] active:text-[var(--neutral-500)] focus-visible:border-2 focus-visible:border-[var(--accent-700)] disabled:bg-[var(--accent-900)] disabled:text-[var(--neutral-900)]',
         secondary:
           'bg-[var(--ink-300)] text-[var(--neutral-100)] hover:bg-[var(--ink-100)] active:bg-[var(--ink-400)] focus-visible:border focus-visible:border-[var(--accent-300)] disabled:bg-[var(--ink-500)] disabled:text-[var(--neutral-900)]',
         outline:
